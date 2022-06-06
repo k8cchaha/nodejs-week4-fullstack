@@ -10,6 +10,11 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: [true, "內容必填"]
     },
+    user: {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+      required: [true, "User ID 必填"]
+    },
     type: {
       type: String
     },

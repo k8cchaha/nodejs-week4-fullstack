@@ -1,25 +1,40 @@
 const Post = require("../models/postsModel");
+const User = require("../models/usersModel");
 const successHandle = require("../service/successHandle");
 const errorHandle = require("../service/errorHandle");
 
 const postController = {
-  getPosts: async (res) => {
-    const getPosts = await Post.find();
+  getPosts: async (req, res) => {
+    const timeSort = req.query.timeSort == "asc" ? "createdAt" : "-createdAt";
+    const q =
+      req.query.q !== undefined ? { content: new RegExp(req.query.q) } : {};
+    const getPosts = await Post.find(q)
+      .populate({
+        path: "user",
+        select: "name photo "
+      })
+      .sort(timeSort);
     successHandle(res, "成功取得全部貼文", getPosts);
   },
   createPost: async (req, res) => {
     try {
       const data = req.body;
-      const createPost = await Post.create({
-        name: data.name,
-        content: data.content,
-        type: data.type,
-        tags: data.tags,
-        image: data.image,
-        likes: data.likes,
-        comments: data.comments
-      });
-      successHandle(res, "成功新增貼文", createPost);
+      const user = await User.findById(data.user);
+      if (user) {
+        const createPost = await Post.create({
+          name: data.name,
+          content: data.content,
+          user: data.user,
+          type: data.type,
+          tags: data.tags,
+          image: data.image,
+          likes: data.likes,
+          comments: data.comments
+        });
+        successHandle(res, "成功新增貼文", createPost);
+      } else {
+        errorHandle(res, err, "作者不存在");
+      }
     } catch (err) {
       errorHandle(res, err);
     }

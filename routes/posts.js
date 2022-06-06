@@ -3,7 +3,7 @@ var router = express.Router();
 var postController = require("../controllers/postsController");
 
 router.get("/", function (req, res) {
-  postController.getPosts(res);
+  postController.getPosts(req, res);
 });
 
 router.post("/", function (req, res) {

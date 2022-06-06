@@ -1,9 +1,9 @@
-const errorHandle = (res, err) => {
+const errorHandle = (res, err, message) => {
   res
     .status(400)
     .json({
       status: "false",
-      message: "欄位，或是 ID 有錯",
+      message: message ? message : "欄位，或是 ID 有錯",
       error: err
     })
     .end();
