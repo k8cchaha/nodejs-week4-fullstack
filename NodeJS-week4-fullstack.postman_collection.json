@@ -33,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"NBA\",\n    \"content\": \"sport games\",\n    \"type\": \"magazine\",\n    \"tags\": [\"sport\"],\n    \"likes\": 888,\n    \"comments\": 60,\n    \"user\": \"629d6df036f9008e2ac4b18d\"\n}",
+					"raw": "{\n    \"name\": \"NBA\",\n    \"content\": \"sport games\",\n    \"type\": \"magazine\",\n    \"tags\": [\"sport\"],\n    \"likes\": 888,\n    \"comments\": 60,\n    \"user\": \"629e292f91e46a6e489ab878\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
