@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "ec232c05-d614-4f75-9ee1-86f01efb8bec",
+		"name": "NodeJS-week4-fullstack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "575537"
+	},
+	"item": [
+		{
+			"name": "getPosts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://immense-sierra-72594.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"immense-sierra-72594",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"NBA\",\n    \"content\": \"sport games\",\n    \"type\": \"magazine\",\n    \"tags\": [\"sport\"],\n    \"likes\": 888,\n    \"comments\": 60,\n    \"user\": \"629d6df036f9008e2ac4b18d\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://immense-sierra-72594.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"immense-sierra-72594",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePost",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"comments\": 121\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://immense-sierra-72594.herokuapp.com/posts/6295171ede5c82db52b90f82",
+					"protocol": "https",
+					"host": [
+						"immense-sierra-72594",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"6295171ede5c82db52b90f82"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePosts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://immense-sierra-72594.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"immense-sierra-72594",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePost",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://immense-sierra-72594.herokuapp.com/posts/",
+					"protocol": "https",
+					"host": [
+						"immense-sierra-72594",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://immense-sierra-72594.herokuapp.com/users",
+					"protocol": "https",
+					"host": [
+						"immense-sierra-72594",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://immense-sierra-72594.herokuapp.com/users/",
+					"protocol": "https",
+					"host": [
+						"immense-sierra-72594",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
